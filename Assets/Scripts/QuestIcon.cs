@@ -21,7 +21,6 @@ public class DestinationIcon : MonoBehaviour
     {
         direction = Destination.transform.position - player.transform.position;
         direction.Normalize();
-        print(direction);
         transform.position = radar.transform.position + new Vector3(direction.x, direction.y, 0) * 200;
     }
 }
