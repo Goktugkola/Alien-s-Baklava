@@ -23,22 +23,22 @@ public class Gravity : MonoBehaviour
 
     void Update()
     {
-        if(active == true)
+        if (active == true)
         {
-        // Calculate the direction vector from the object to the planet
-        Vector2 direction = player.position - transform.position;
+            // Calculate the direction vector from the object to the planet
+            Vector2 direction = player.position - transform.position;
 
-        // Calculate the distance between the object and the planet
-        float distance = direction.magnitude;
+            // Calculate the distance between the object and the planet
+            float distance = direction.magnitude;
 
-        // Normalize the direction vector to get a unit vector (direction only)
-        direction.Normalize();
+            // Normalize the direction vector to get a unit vector (direction only)
+            direction.Normalize();
 
-        // Calculate the gravitational force based on distance and gravity strength
-        float gravityMagnitude = gravityForce / (distance *2);
+            // Calculate the gravitational force based on distance and gravity strength
+            float gravityMagnitude = gravityForce / (distance * 2);
 
-        // Apply the gravitational force to the object's Rigidbody2D
-        rb.AddForce(-direction * gravityMagnitude, ForceMode2D.Impulse);
+            // Apply the gravitational force to the object's Rigidbody2D
+            rb.AddForce(-direction * gravityMagnitude, ForceMode2D.Impulse);
         }
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -49,6 +49,12 @@ public class Gravity : MonoBehaviour
             player = other.transform;
             active = true;
         }
+        if (other.gameObject.CompareTag("Police")) // Replace "Planet" with your planet's tag
+        {
+            rb = other.GetComponent<Rigidbody2D>();
+            player = other.transform;
+            active = true;
+        }
     }
-    void OnTriggerExit2D(Collider2D other){active = false;}
+    void OnTriggerExit2D(Collider2D other) { active = false; }
 }
