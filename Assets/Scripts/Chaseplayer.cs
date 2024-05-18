@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Chaseplayer : MonoBehaviour
 {
-    public bool active;
     public Rigidbody2D rb;
     [SerializeField] private int speed;
     private GameObject player;
@@ -22,7 +21,7 @@ public class Chaseplayer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (active && player != null)
+        if (player != null)
         {
             Vector2 direction = player.transform.position - transform.position;
             rb.AddForce(transform.up * speed, ForceMode2D.Force);

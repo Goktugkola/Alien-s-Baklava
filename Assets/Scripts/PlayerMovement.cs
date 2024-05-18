@@ -64,4 +64,8 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed);
         transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, Time.deltaTime);
     }
+    public void over()
+    {
+        Debug.Log("Game Over");
+    }
 }
