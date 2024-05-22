@@ -6,7 +6,7 @@ using UnityEngine;
 public class Chaseplayer : MonoBehaviour
 {
     public Rigidbody2D rb;
-    [SerializeField] private int speed;
+    [SerializeField] private float speed;
     private GameObject player;
     private Quaternion currentRotation;
     private Quaternion targetRotation;

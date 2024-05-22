@@ -440,7 +440,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 16
+  orthographic size: 32
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -950,11 +950,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9158312489226452959, guid: 3ae14dc9da1a0e64ebec37768343a31a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.5
+      value: 15.8
       objectReference: {fileID: 0}
     - target: {fileID: 9158312489226452959, guid: 3ae14dc9da1a0e64ebec37768343a31a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 48.4
+      value: 52.7
       objectReference: {fileID: 0}
     - target: {fileID: 9158312489226452959, guid: 3ae14dc9da1a0e64ebec37768343a31a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1097,14 +1097,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820185058}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19fab52076a9e07479b62220112177be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 820185063}
-  speed: 3
-  rotationspeed: 2
+  speed: 5
+  rotationspeed: 6
 --- !u!50 &820185063
 Rigidbody2D:
   serializedVersion: 4
@@ -1812,7 +1812,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956422293}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 7992ab260760d1a48a7929eb7b50708f, type: 3}
+  m_Asset: {fileID: 0}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
