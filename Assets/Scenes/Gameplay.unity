@@ -806,6 +806,7 @@ MonoBehaviour:
   mapPrefab: {fileID: 1197047667612726540, guid: 365297d05d9a58344affd2dba225a28b, type: 3}
   player: {fileID: 482411638}
   distanceFromBorder: 60
+  maxDistance: 150
 --- !u!4 &688915057
 Transform:
   m_ObjectHideFlags: 0

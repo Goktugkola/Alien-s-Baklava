@@ -6,11 +6,12 @@ public class MapGenerator : MonoBehaviour
     public GameObject mapPrefab; // Prefab of your map
     public GameObject player; // Reference to your player
     public float distanceFromBorder = 5f; // Distance from border to trigger generation
+    public float maxDistance = 30f; // Maximum distance a map can be from the current map before being removed
 
     private Vector2 mapSize; // Store the map size
     private GameObject currentMap;
     private bool isGenerating = false; // Flag to track if generation is in progress
-    private List<GameObject> maps = new List<GameObject>(); // List to store maps
+    private Dictionary<Vector2, GameObject> maps = new Dictionary<Vector2, GameObject>(); // Dictionary to store maps by position
     private int mapCounter = 0; // Counter to ensure unique map names
 
     void Start()
@@ -19,7 +20,7 @@ public class MapGenerator : MonoBehaviour
         currentMap = Instantiate(mapPrefab, Vector3.zero, Quaternion.identity);
         currentMap.name = "Map_" + mapCounter++;
         mapSize = mapPrefab.GetComponent<SpriteRenderer>().bounds.size;
-        maps.Add(currentMap); // Add the initial map to the list
+        maps.Add(Vector2.zero, currentMap); // Add the initial map to the dictionary
     }
 
     void Update()
@@ -29,6 +30,7 @@ public class MapGenerator : MonoBehaviour
         {
             isGenerating = true;
             GenerateSurroundingMaps();
+            RemoveOldMaps();
             isGenerating = false;
         }
 
@@ -39,20 +41,14 @@ public class MapGenerator : MonoBehaviour
     GameObject GetCurrentMapPlayerIsIn()
     {
         Vector3 playerPos = player.transform.position;
+        Vector2 playerGridPos = new Vector2(
+            Mathf.Floor(playerPos.x / mapSize.x),
+            Mathf.Floor(playerPos.y / mapSize.y)
+        );
 
-        // Iterate through all maps to find the one containing the player
-        foreach (GameObject map in maps)
+        if (maps.TryGetValue(playerGridPos, out GameObject map))
         {
-            Vector3 mapPos = map.transform.position;
-
-            // Check if the player is within the bounds of the current map
-            if (playerPos.x > mapPos.x - mapSize.x / 2 &&
-                playerPos.x < mapPos.x + mapSize.x / 2 &&
-                playerPos.y > mapPos.y - mapSize.y / 2 &&
-                playerPos.y < mapPos.y + mapSize.y / 2)
-            {
-                return map;
-            }
+            return map;
         }
 
         // If player isn't in any map, return the most recently generated one
@@ -77,15 +73,12 @@ public class MapGenerator : MonoBehaviour
 
     bool IsMapAtPosition(Vector3 position)
     {
-        foreach (GameObject map in maps)
-        {
-            // Check if the distance between the map position and the given position is negligible
-            if (Vector3.Distance(map.transform.position, position) < 0.1f)
-            {
-                return true;
-            }
-        }
-        return false;
+        Vector2 gridPos = new Vector2(
+            Mathf.Floor(position.x / mapSize.x),
+            Mathf.Floor(position.y / mapSize.y)
+        );
+
+        return maps.ContainsKey(gridPos);
     }
 
     void GenerateSurroundingMaps()
@@ -116,8 +109,36 @@ public class MapGenerator : MonoBehaviour
             {
                 GameObject newMap = Instantiate(mapPrefab, newMapPos, Quaternion.identity);
                 newMap.name = "Map_" + mapCounter++;
-                maps.Add(newMap);
+                maps.Add(new Vector2(
+                    Mathf.Floor(newMapPos.x / mapSize.x),
+                    Mathf.Floor(newMapPos.y / mapSize.y)
+                ), newMap);
             }
+        }
+    }
+
+    void RemoveOldMaps()
+    {
+        Vector3 currentMapPos = currentMap.transform.position;
+        Vector2 currentGridPos = new Vector2(
+            Mathf.Floor(currentMapPos.x / mapSize.x),
+            Mathf.Floor(currentMapPos.y / mapSize.y)
+        );
+
+        List<Vector2> mapsToRemove = new List<Vector2>();
+
+        foreach (KeyValuePair<Vector2, GameObject> kvp in maps)
+        {
+            if (Vector2.Distance(kvp.Key, currentGridPos) * mapSize.x > maxDistance)
+            {
+                mapsToRemove.Add(kvp.Key);
+            }
+        }
+
+        foreach (Vector2 gridPos in mapsToRemove)
+        {
+            Destroy(maps[gridPos]);
+            maps.Remove(gridPos);
         }
     }
 }
