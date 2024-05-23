@@ -9,6 +9,7 @@ using System.Linq;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Animator _animator;
     private const float ROTATION_MULTIPLIER = 45f;
     private const float HOLD_INCREMENT = 0.5f;
     private const float MAX_HOLD = 3f;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        _animator = GetComponentInChildren<Animator>();
         screenWidth = Screen.width;
         rb = GetComponent<Rigidbody2D>();
         EnhancedTouchSupport.Enable();
@@ -34,12 +36,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+      
         ProcessTouchInput();
         CalculateRotation();
     }
 
     void LateUpdate()
     {
+        Animations();
         ApplyMovement();
     }
 
@@ -49,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector2 touchPosition = Touch.activeTouches[0].screenPosition;
             movementInput = (touchPosition.x < screenWidth / 2) ? 1f : -1f;
+
         }
         else
         {
@@ -62,7 +67,20 @@ public class PlayerMovement : MonoBehaviour
         currentRotation = transform.rotation;
         targetRotation = Quaternion.Euler(0, 0, -Mathf.Abs(360 - transform.eulerAngles.z) - movementInput * ROTATION_MULTIPLIER * hold);
     }
-
+    private void Animations()
+    {
+        _animator.SetBool("Forwardy", Touch.activeTouches.Count > 1);
+        if (Touch.activeTouches.Count == 1)
+        {
+            _animator.SetBool("Righty", Touch.activeTouches[0].screenPosition.x > screenWidth / 2);
+            _animator.SetBool("Lefty", Touch.activeTouches[0].screenPosition.x < screenWidth / 2);
+        }
+        else
+        {
+            _animator.SetBool("Righty", false);
+            _animator.SetBool("Lefty", false);
+        }
+    }
     private void ApplyMovement()
     {
         if (Touch.activeTouches.Count > 0)
@@ -71,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
             if (hold < MAX_HOLD)
                 hold += Time.deltaTime * HOLD_INCREMENT;
         }
-
         float maxAllowedSpeed = (Touch.activeTouches.Count > 1) ? maxSpeed * 2 : maxSpeed;
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxAllowedSpeed);
         transform.rotation = Quaternion.Slerp(currentRotation, targetRotation,  hold* Time.deltaTime);
