@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -54,6 +55,13 @@ public class Gravity : MonoBehaviour
             rb = other.GetComponent<Rigidbody2D>();
             player = other.transform;
             active = true;
+        }
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (!other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.SendMessage("death");
         }
     }
     void OnTriggerExit2D(Collider2D other) { active = false; }
