@@ -7,6 +7,7 @@ public class Police : MonoBehaviour
     private bool isChasing;
     private int maxSpeed;
     public Rigidbody2D rb;
+    public Animator _animator;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,9 @@ public class Police : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isChasing = true;
+            _animator.SetBool("isChasing", true);
             transform.GetComponent<Chaseplayer>().enabled = true;
+
         }
     }
 }
