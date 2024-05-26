@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Radar
   - Police
+  - GameManager
   layers:
   - Default
   - TransparentFX

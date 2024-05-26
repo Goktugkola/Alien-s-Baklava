@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 26108136}
   - component: {fileID: 26108135}
   - component: {fileID: 26108134}
-  - component: {fileID: 26108137}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -192,18 +191,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &26108137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 26108133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a312fe509d037f441b1f7a8e18111770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &218604974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -573,6 +560,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1705419201 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3231540798753936792, guid: 67be618df304080448c1f4959ebab9ec, type: 3}
+  m_PrefabInstance: {fileID: 4312380964973004016}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9a3d902cef4d4458c281fc6692dd13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1722422525 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7312636284174303536, guid: 3ae14dc9da1a0e64ebec37768343a31a, type: 3}
@@ -603,10 +601,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 23115514637337420, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
+      propertyPath: m_text
+      value: Pause
+      objectReference: {fileID: 0}
     - target: {fileID: 3043719204375695681, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 26108137}
+      objectReference: {fileID: 1705419201}
+    - target: {fileID: 3043719204375695681, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPaused
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043719204375695681, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5623464102696884930, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -870,9 +880,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3231540798753936792, guid: 67be618df304080448c1f4959ebab9ec, type: 3}
+      propertyPath: pauseGameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: f5945d2bf2f3ba3418363fd7e994d7f9, type: 2}
     - target: {fileID: 7448814018295913310, guid: 67be618df304080448c1f4959ebab9ec, type: 3}
       propertyPath: m_Name
       value: Gamemanager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7448814018295913310, guid: 67be618df304080448c1f4959ebab9ec, type: 3}
+      propertyPath: m_TagString
+      value: GameManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

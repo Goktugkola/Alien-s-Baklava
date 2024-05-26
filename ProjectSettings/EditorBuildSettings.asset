@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 8de00448c79854a4d9159e8a74261b0b
+  - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 7dd1725160375984cb146e3137d99a3a
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 4f9cea15c70f97e4e874f5119d5faed9, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: cef65bf8c97a819469c74f4996db6dc0, type: 2}
