@@ -44,25 +44,19 @@ public class Gravity : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player")) // Replace "Planet" with your planet's tag
+        if (other.gameObject.CompareTag("Player"))
         {
             rb = other.GetComponent<Rigidbody2D>();
             player = other.transform;
             active = true;
         }
-        if (other.gameObject.CompareTag("Police")) // Replace "Planet" with your planet's tag
+        if (other.gameObject.CompareTag("Police"))
         {
             rb = other.GetComponent<Rigidbody2D>();
             player = other.transform;
             active = true;
         }
     }
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (!other.gameObject.CompareTag("Player"))
-        {
-            other.gameObject.SendMessage("death");
-        }
-    }
+
     void OnTriggerExit2D(Collider2D other) { active = false; }
 }

@@ -8,6 +8,7 @@ public class DestinationIcon : MonoBehaviour
     private GameObject radar;
     private Vector2 direction;
     public GameObject Destination;
+    [SerializeField] private float dis;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,6 @@ public class DestinationIcon : MonoBehaviour
     {
         direction = Destination.transform.position - player.transform.position;
         direction.Normalize();
-        transform.position = radar.transform.position + new Vector3(direction.x, direction.y, 0) * 180;
+        transform.position = radar.transform.position + new Vector3(direction.x, direction.y, 0) * dis;
     }
 }

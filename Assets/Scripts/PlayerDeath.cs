@@ -6,10 +6,18 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour
 {
     [SerializeField] private PlayerDeathEvent playerDeathEvent;
-
-    private void Die()
+    [SerializeField] private ParticleSystem DeathVfx;
+    [SerializeField] private SpriteRenderer sprite;
+    void death()
     {
-        // Call this method when the player dies
+        print("imdead");
+        sprite.enabled = false;
+        DeathVfx.Play();
+        StartCoroutine(GameOver(1));
+    }
+    IEnumerator GameOver(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
         playerDeathEvent.Raise();
     }
 }

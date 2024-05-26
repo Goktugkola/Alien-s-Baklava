@@ -18,7 +18,12 @@ public class PlayerMovement : MonoBehaviour
     public int speed;
     public int maxSpeed;
     public PlayerInput playerInput;
-
+    [SerializeField] private GameObject rocketLeft;
+    [SerializeField] private GameObject rocketRight;
+    [SerializeField] private GameObject rocketMid;
+    private ParticleSystem rocketLeftP;
+    private ParticleSystem rocketRightP;
+    private ParticleSystem rocketMidP;
     private float hold = 1;
     private Rigidbody2D rb;
     private float movementInput;
@@ -27,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        rocketLeftP = rocketLeft.GetComponent<ParticleSystem>();
+        rocketRightP = rocketRight.GetComponent<ParticleSystem>();
+        rocketMidP = rocketMid.GetComponent<ParticleSystem>();
         _animator = GetComponentInChildren<Animator>();
         screenWidth = Screen.width;
         rb = GetComponent<Rigidbody2D>();
@@ -80,6 +88,17 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetBool("Righty", false);
             _animator.SetBool("Lefty", false);
         }
+        if(Touch.activeTouches.Count > 0)
+        {
+            if(Touch.activeTouches[0].screenPosition.x < screenWidth / 2)
+            { rocketLeftP.Play(); }
+            if (Touch.activeTouches[0].screenPosition.x > screenWidth / 2)
+            { rocketRightP.Play(); }
+        }
+        else { rocketLeftP.Pause(); rocketRightP.Pause(); }
+        if (Touch.activeTouches.Count > 1)
+        { rocketMidP.Play(); }
+        else { rocketMidP.Pause(); }
     }
     private void ApplyMovement()
     {
