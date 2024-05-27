@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
             if (hold < MAX_HOLD)
                 hold += Time.deltaTime * HOLD_INCREMENT;
         }
-        float maxAllowedSpeed = (Touch.activeTouches.Count > 1) ? maxSpeed * 2 : maxSpeed;
+        float maxAllowedSpeed = (Touch.activeTouches.Count > 1) ? maxSpeed * 1 : maxSpeed;
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxAllowedSpeed);
         transform.rotation = Quaternion.Slerp(currentRotation, targetRotation,  hold* Time.deltaTime);
     }

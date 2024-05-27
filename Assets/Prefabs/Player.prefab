@@ -9853,7 +9853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  maxSpeed: 6
+  maxSpeed: 12
   playerInput: {fileID: 8352113837409883154}
   rocketLeft: {fileID: 5515122860253039720}
   rocketRight: {fileID: 38753003008204710}
