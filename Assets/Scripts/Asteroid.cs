@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
+    [SerializeField] private Transform TargetPosition;
+    [SerializeField] private float speed;
     // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(other.CompareTag("Player"))
+        {
+            Vector2 currentPosition = transform.position;
+            Vector2 targetPosition = new Vector2(TargetPosition.position.x,TargetPosition.position.y);
+            transform.position = Vector2.MoveTowards(currentPosition,targetPosition,speed * Time.deltaTime);
+        }
     }
 }
