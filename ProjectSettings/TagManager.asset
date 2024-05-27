@@ -7,6 +7,7 @@ TagManager:
   - Radar
   - Police
   - GameManager
+  - Asteroid
   layers:
   - Default
   - TransparentFX

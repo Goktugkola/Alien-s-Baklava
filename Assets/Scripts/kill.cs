@@ -13,5 +13,11 @@ public class kill : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Player"))
         { other.gameObject.SendMessage("death"); }
+
+        if (other.gameObject.CompareTag("Asteroid"))
+        {
+            print(other.gameObject.name);
+            other.gameObject.SendMessage("death");
+        }
     }
 }

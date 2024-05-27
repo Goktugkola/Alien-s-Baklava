@@ -616,6 +616,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4577249159136050963, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577249159136050963, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 5623464102696884930, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -705,7 +713,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1722422525}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8569573074859481182, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
