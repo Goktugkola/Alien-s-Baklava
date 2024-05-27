@@ -568,6 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ee3883ecd86fd4592b47cde5b30322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blackimage: {fileID: 2809658217826769156}
 --- !u!198 &2052533697 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 2628588250306824386, guid: c26dfe03a47ab8344ab61c9d7bcc21f0, type: 3}
@@ -690,6 +691,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
+--- !u!114 &2809658217826769156 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 908107677396228719, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
+  m_PrefabInstance: {fileID: 2809658217826769155}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3012578325387158743
 PrefabInstance:
   m_ObjectHideFlags: 0
