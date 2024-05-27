@@ -6,7 +6,7 @@ public class kill : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (!other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Police"))
         {
             print(other.gameObject.name);
             other.gameObject.SendMessage("death");

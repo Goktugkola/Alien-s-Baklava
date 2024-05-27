@@ -44,16 +44,9 @@ public class Gravity : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if(other.GetComponent<Rigidbody2D>() != null)
         {
             rb = other.GetComponent<Rigidbody2D>();
-            player = other.transform;
-            active = true;
-        }
-        if (other.gameObject.CompareTag("Police"))
-        {
-            rb = other.GetComponent<Rigidbody2D>();
-            player = other.transform;
             active = true;
         }
     }

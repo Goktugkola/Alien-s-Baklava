@@ -12,11 +12,20 @@ public class Asteroid : MonoBehaviour
     // Start is called before the first frame update
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Vector2 currentPosition = transform.position;
-            Vector2 targetPosition = new Vector2(TargetPosition.position.x,TargetPosition.position.y);
-            transform.position = Vector2.MoveTowards(currentPosition,targetPosition,speed * Time.deltaTime);
+            StartCoroutine(MoveToTarget());
+        }
+    }
+
+    IEnumerator MoveToTarget()
+    {
+        Vector2 targetPosition = new Vector2(TargetPosition.position.x, TargetPosition.position.y);
+
+        while ((Vector2)transform.position != targetPosition)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            yield return null;
         }
     }
 
