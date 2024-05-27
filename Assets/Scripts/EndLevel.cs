@@ -13,6 +13,7 @@ public class EndLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        blackimage.gameObject.SetActive(false);
 
     }
 
@@ -23,6 +24,8 @@ public class EndLevel : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
+        blackimage.gameObject.SetActive(true);
+
         if (other.CompareTag( "Player"));
         {
             StartCoroutine(endLevel(1));

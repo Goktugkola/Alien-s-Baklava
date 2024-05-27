@@ -9,6 +9,8 @@ public class BeginLevel : MonoBehaviour
     [SerializeField] private Image blackimage;
     void Start()
     {
+        blackimage.gameObject.SetActive(true);
+        blackimage.color = new Color(blackimage.color.r, blackimage.color.g, blackimage.color.b, 1f);
         StartCoroutine(beginLevel(2));
     }
 
@@ -28,6 +30,6 @@ public class BeginLevel : MonoBehaviour
         }
         blackimage.color = targetColor;
         yield return new WaitForSeconds(time);
-        Debug.Log("Level Start");
+        blackimage.gameObject.SetActive(false);
     }
 }
