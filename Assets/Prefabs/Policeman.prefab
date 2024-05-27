@@ -283,6 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathVfx: {fileID: 1827840697552763601}
+  SpriteRenderer: {fileID: 7981781129368961313}
 --- !u!1 &4129652831148279627
 GameObject:
   m_ObjectHideFlags: 0
