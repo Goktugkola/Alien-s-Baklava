@@ -9799,8 +9799,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a4d45f142b54c449434b9adb6653fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  maxSpeed: 12
+  speed: 7
+  maxSpeed: 9
   playerInput: {fileID: 8352113837409883154}
   rocketLeft: {fileID: 5515122860253039720}
   rocketRight: {fileID: 38753003008204710}
