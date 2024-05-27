@@ -31,10 +31,20 @@ public class Asteroid : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+
         print(other.gameObject.name);
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.SendMessage("death");
+        }
+
+        
+    }
+    private void Update()
+    {
+        if (transform.position == new Vector3(TargetPosition.position.x, TargetPosition.position.y, transform.position.z))
+        {
+            Destroy(gameObject.transform.parent.gameObject.transform.parent.gameObject);
         }
     }
 }
