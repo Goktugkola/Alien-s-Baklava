@@ -604,25 +604,17 @@ PrefabInstance:
       propertyPath: m_text
       value: Pause
       objectReference: {fileID: 0}
+    - target: {fileID: 702283528317332188, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3043719204375695681, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1705419201}
-    - target: {fileID: 3043719204375695681, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPaused
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043719204375695681, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4577249159136050963, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 4577249159136050963, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 80
+    - target: {fileID: 5492007638047543278, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5623464102696884930, guid: 891aefc6b8f3ce64280872cac7581cd2, type: 3}
       propertyPath: m_Name

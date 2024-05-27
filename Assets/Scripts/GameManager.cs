@@ -31,10 +31,12 @@ public class GameManager : MonoBehaviour
     {
         if (isPaused)
         {
+            print("resume");
             StartCoroutine(ResumeGame());
         }
         else
         {
+            print("pause");
             StartCoroutine(PauseGame());
         }
     }

@@ -3,7 +3,9 @@ guid: af9a3d902cef4d4458c281fc6692dd13
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerDeathEvent: {fileID: 11400000, guid: e0036d78b58954043b1806a4b50a0d89, type: 2}
+  - pauseGameEvent: {fileID: 11400000, guid: f5945d2bf2f3ba3418363fd7e994d7f9, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
