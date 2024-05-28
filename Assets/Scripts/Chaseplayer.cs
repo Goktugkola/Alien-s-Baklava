@@ -11,11 +11,13 @@ public class Chaseplayer : MonoBehaviour
     private Quaternion currentRotation;
     private Quaternion targetRotation;
     public float rotationspeed = 2;
-
+    private AudioSource siren;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        siren = GetComponentInChildren<AudioSource>();
+        siren.Play();
     }
 
     // Update is called once per frame

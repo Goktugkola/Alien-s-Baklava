@@ -484,6 +484,10 @@ PrefabInstance:
       propertyPath: blackimage
       value: 
       objectReference: {fileID: 1022423608}
+    - target: {fileID: 5334303120019346270, guid: 67be618df304080448c1f4959ebab9ec, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7448814018295913310, guid: 67be618df304080448c1f4959ebab9ec, type: 3}
       propertyPath: m_Name
       value: Gamemanager
