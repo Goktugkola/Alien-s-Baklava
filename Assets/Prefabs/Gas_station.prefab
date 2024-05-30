@@ -176,4 +176,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackimage: {fileID: 0}
-  sceneto: lvl2
+  sceneto: Credits

@@ -4995,7 +4995,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15, y: 24}
+  m_Size: {x: 17, y: 25}
   m_EdgeRadius: 0
 --- !u!1 &7969081852167910443
 GameObject:
@@ -5230,7 +5230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 60245769613055549}
   m_Layer: 0
-  m_Name: asteroid
+  m_Name: Asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

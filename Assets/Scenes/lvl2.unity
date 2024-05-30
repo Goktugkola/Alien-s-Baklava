@@ -629,10 +629,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2574473462329841036, guid: 89981ed7fcd11df4ab9888faaf20e92c, type: 3}
-      propertyPath: sceneto
-      value: Credits
-      objectReference: {fileID: 0}
-    - target: {fileID: 2574473462329841036, guid: 89981ed7fcd11df4ab9888faaf20e92c, type: 3}
       propertyPath: blackimage
       value: 
       objectReference: {fileID: 1022423608}

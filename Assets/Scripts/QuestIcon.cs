@@ -23,5 +23,11 @@ public class DestinationIcon : MonoBehaviour
         direction = Destination.transform.position - player.transform.position;
         direction.Normalize();
         transform.position = radar.transform.position + new Vector3(direction.x, direction.y, 0) * dis;
+
+        // Calculate the angle in degrees
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Apply the rotation to the object
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, -angle +90));
     }
 }

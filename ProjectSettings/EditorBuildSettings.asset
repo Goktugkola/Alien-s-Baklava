@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ViewManager.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
+    path: Assets/Scenes/Opening.unity
+    guid: 316ed617352fad24586e9f0fd6d95d34
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2420889e27701cf46bd0bb11d3bc661b
   - enabled: 1
@@ -26,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/lvl2.unity
     guid: 2b4d6a6629e65f049b78ed25e43eeb87
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: ed91a52bea14fdc4f825e464af4e2ca2
   - enabled: 1
     path: Assets/Scenes/Comic.unity
     guid: 4a3325da4bd22c64bb54714f8003d192
