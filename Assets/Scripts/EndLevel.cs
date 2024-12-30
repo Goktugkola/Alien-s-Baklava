@@ -26,7 +26,7 @@ public class EndLevel : MonoBehaviour
     {
         blackimage.gameObject.SetActive(true);
 
-        if (other.CompareTag( "Player"));
+        if (other.CompareTag("Player"))
         {
             StartCoroutine(endLevel(1));
         }
