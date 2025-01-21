@@ -55,8 +55,7 @@ Although this project is a team effort, the majority of the game was developed b
 
 ## Credits
 
-A heartfelt thanks to everyone who contributed to this project. It wouldn't have been possible without the hard work and dedication of the team.
-
+A heartfelt thanks to everyone who contributed to this project.
 ---
 
 ## Contact
