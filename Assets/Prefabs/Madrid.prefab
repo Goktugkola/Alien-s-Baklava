@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 7754539276471043339}
   - component: {fileID: 6413705150757348922}
   - component: {fileID: 8224785128745986669}
+  - component: {fileID: 1497651998934434487}
   - component: {fileID: 4173797213391319682}
   m_Layer: 0
   m_Name: Madrid
@@ -234,6 +235,18 @@ MonoBehaviour:
   rb: {fileID: 0}
   player: {fileID: 0}
   gravityForce: 5
+--- !u!114 &1497651998934434487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596464615027036927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6e1868511797842a49ab1a9ae3146c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4173797213391319682
 MonoBehaviour:
   m_ObjectHideFlags: 0

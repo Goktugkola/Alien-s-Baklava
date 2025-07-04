@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 8611323762103716504}
   - component: {fileID: 3675562376456604615}
   - component: {fileID: 2129285080074465820}
+  - component: {fileID: -1976564760345500681}
   m_Layer: 0
   m_Name: Policeman
   m_TagString: Police
@@ -265,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51560682db19dd4b8ab2d4776b0b510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 8979667977559006776}
   _animator: {fileID: 411061507813041044}
 --- !u!61 &1615745968234387297
 BoxCollider2D:
@@ -320,7 +321,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2599514795777146546}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -413,6 +414,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeathVfx: {fileID: 1827840697552763601}
   SpriteRenderer: {fileID: 7981781129368961313}
+--- !u!114 &-1976564760345500681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2599514795777146546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6e1868511797842a49ab1a9ae3146c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4129652831148279627
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3072069603097634701}
   - component: {fileID: 657392044798480573}
   - component: {fileID: 6305109991365411283}
+  - component: {fileID: 85104133912543265}
   - component: {fileID: 8543867582079074146}
   m_Layer: 0
   m_Name: shangai
@@ -150,6 +151,18 @@ MonoBehaviour:
   rb: {fileID: 0}
   player: {fileID: 0}
   gravityForce: 5
+--- !u!114 &85104133912543265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5876702482911724576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6e1868511797842a49ab1a9ae3146c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8543867582079074146
 MonoBehaviour:
   m_ObjectHideFlags: 0

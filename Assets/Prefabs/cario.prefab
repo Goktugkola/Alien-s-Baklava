@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 4196855391492230027}
   - component: {fileID: 4919597469621420843}
   - component: {fileID: 1552108590217853987}
+  - component: {fileID: 7298266908686818841}
   - component: {fileID: -6246853418308229056}
   m_Layer: 0
   m_Name: cario
@@ -234,6 +235,18 @@ MonoBehaviour:
   rb: {fileID: 0}
   player: {fileID: 0}
   gravityForce: 5
+--- !u!114 &7298266908686818841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298262325536394474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6e1868511797842a49ab1a9ae3146c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-6246853418308229056
 MonoBehaviour:
   m_ObjectHideFlags: 0

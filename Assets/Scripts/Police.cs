@@ -23,6 +23,7 @@ public class Police : MonoBehaviour
             isChasing = true;
             _animator.SetBool("isChasing", true);
             transform.GetComponent<Chaseplayer>().enabled = true;
+            rb.bodyType = RigidbodyType2D.Dynamic;
         }
     }
     void OnCollisionEnter2D(Collision2D other)
