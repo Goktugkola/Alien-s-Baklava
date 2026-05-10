@@ -48,7 +48,7 @@ Although this project is a team effort, the majority of the game was developed b
    ```bash
    git clone https://github.com/Goktugkola/Alien-s-Baklava.git
    ```
-2. Open the project in your preferred game engine (e.g., Unity or your selected framework).
+2. Open the project in Unity.
 3. Play the game!
 
 ---
